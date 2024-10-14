@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C1F062F2CBABB5500AB7C15 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1F062E2CBABB5500AB7C15 /* Metal.framework */; };
+		4C1F06A72CBABF4500AB7C15 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1F06302CBABC6C00AB7C15 /* AppKit.framework */; };
+		4C1F06A92CBABF4E00AB7C15 /* MetalKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C1F06A82CBABF4E00AB7C15 /* MetalKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4CA8C2882CBAB95D005C46BA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4C1F062A2CBABB4100AB7C15 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C1F062C2CBABB4B00AB7C15 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4C1F062E2CBABB5500AB7C15 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		4C1F06302CBABC6C00AB7C15 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4C1F063B2CBABF0600AB7C15 /* Foundation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Foundation.hpp; sourceTree = "<group>"; };
+		4C1F063C2CBABF0600AB7C15 /* NSArray.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSArray.hpp; sourceTree = "<group>"; };
+		4C1F063D2CBABF0600AB7C15 /* NSAutoreleasePool.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSAutoreleasePool.hpp; sourceTree = "<group>"; };
+		4C1F063E2CBABF0600AB7C15 /* NSBundle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSBundle.hpp; sourceTree = "<group>"; };
+		4C1F063F2CBABF0600AB7C15 /* NSData.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSData.hpp; sourceTree = "<group>"; };
+		4C1F06402CBABF0600AB7C15 /* NSDate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSDate.hpp; sourceTree = "<group>"; };
+		4C1F06412CBABF0600AB7C15 /* NSDefines.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSDefines.hpp; sourceTree = "<group>"; };
+		4C1F06422CBABF0600AB7C15 /* NSDictionary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSDictionary.hpp; sourceTree = "<group>"; };
+		4C1F06432CBABF0600AB7C15 /* NSEnumerator.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSEnumerator.hpp; sourceTree = "<group>"; };
+		4C1F06442CBABF0600AB7C15 /* NSError.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSError.hpp; sourceTree = "<group>"; };
+		4C1F06452CBABF0600AB7C15 /* NSLock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSLock.hpp; sourceTree = "<group>"; };
+		4C1F06462CBABF0600AB7C15 /* NSNotification.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSNotification.hpp; sourceTree = "<group>"; };
+		4C1F06472CBABF0600AB7C15 /* NSNumber.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSNumber.hpp; sourceTree = "<group>"; };
+		4C1F06482CBABF0600AB7C15 /* NSObjCRuntime.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSObjCRuntime.hpp; sourceTree = "<group>"; };
+		4C1F06492CBABF0600AB7C15 /* NSObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSObject.hpp; sourceTree = "<group>"; };
+		4C1F064A2CBABF0600AB7C15 /* NSPrivate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSPrivate.hpp; sourceTree = "<group>"; };
+		4C1F064B2CBABF0600AB7C15 /* NSProcessInfo.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSProcessInfo.hpp; sourceTree = "<group>"; };
+		4C1F064C2CBABF0600AB7C15 /* NSRange.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSRange.hpp; sourceTree = "<group>"; };
+		4C1F064D2CBABF0600AB7C15 /* NSSet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSSet.hpp; sourceTree = "<group>"; };
+		4C1F064E2CBABF0600AB7C15 /* NSSharedPtr.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSSharedPtr.hpp; sourceTree = "<group>"; };
+		4C1F064F2CBABF0600AB7C15 /* NSString.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSString.hpp; sourceTree = "<group>"; };
+		4C1F06502CBABF0600AB7C15 /* NSTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSTypes.hpp; sourceTree = "<group>"; };
+		4C1F06512CBABF0600AB7C15 /* NSURL.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSURL.hpp; sourceTree = "<group>"; };
+		4C1F06532CBABF0600AB7C15 /* Metal.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Metal.hpp; sourceTree = "<group>"; };
+		4C1F06542CBABF0600AB7C15 /* MTLAccelerationStructure.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLAccelerationStructure.hpp; sourceTree = "<group>"; };
+		4C1F06552CBABF0600AB7C15 /* MTLAccelerationStructureCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLAccelerationStructureCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06562CBABF0600AB7C15 /* MTLAccelerationStructureTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLAccelerationStructureTypes.hpp; sourceTree = "<group>"; };
+		4C1F06572CBABF0600AB7C15 /* MTLAllocation.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLAllocation.hpp; sourceTree = "<group>"; };
+		4C1F06582CBABF0600AB7C15 /* MTLArgument.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLArgument.hpp; sourceTree = "<group>"; };
+		4C1F06592CBABF0600AB7C15 /* MTLArgumentEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLArgumentEncoder.hpp; sourceTree = "<group>"; };
+		4C1F065A2CBABF0600AB7C15 /* MTLBinaryArchive.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLBinaryArchive.hpp; sourceTree = "<group>"; };
+		4C1F065B2CBABF0600AB7C15 /* MTLBlitCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLBlitCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F065C2CBABF0600AB7C15 /* MTLBlitPass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLBlitPass.hpp; sourceTree = "<group>"; };
+		4C1F065D2CBABF0600AB7C15 /* MTLBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLBuffer.hpp; sourceTree = "<group>"; };
+		4C1F065E2CBABF0600AB7C15 /* MTLCaptureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCaptureManager.hpp; sourceTree = "<group>"; };
+		4C1F065F2CBABF0600AB7C15 /* MTLCaptureScope.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCaptureScope.hpp; sourceTree = "<group>"; };
+		4C1F06602CBABF0600AB7C15 /* MTLCommandBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCommandBuffer.hpp; sourceTree = "<group>"; };
+		4C1F06612CBABF0600AB7C15 /* MTLCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06622CBABF0600AB7C15 /* MTLCommandQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCommandQueue.hpp; sourceTree = "<group>"; };
+		4C1F06632CBABF0600AB7C15 /* MTLComputeCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLComputeCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06642CBABF0600AB7C15 /* MTLComputePass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLComputePass.hpp; sourceTree = "<group>"; };
+		4C1F06652CBABF0600AB7C15 /* MTLComputePipeline.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLComputePipeline.hpp; sourceTree = "<group>"; };
+		4C1F06662CBABF0600AB7C15 /* MTLCounters.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLCounters.hpp; sourceTree = "<group>"; };
+		4C1F06672CBABF0600AB7C15 /* MTLDefines.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLDefines.hpp; sourceTree = "<group>"; };
+		4C1F06682CBABF0600AB7C15 /* MTLDepthStencil.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLDepthStencil.hpp; sourceTree = "<group>"; };
+		4C1F06692CBABF0600AB7C15 /* MTLDevice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLDevice.hpp; sourceTree = "<group>"; };
+		4C1F066A2CBABF0600AB7C15 /* MTLDrawable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLDrawable.hpp; sourceTree = "<group>"; };
+		4C1F066B2CBABF0600AB7C15 /* MTLDynamicLibrary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLDynamicLibrary.hpp; sourceTree = "<group>"; };
+		4C1F066C2CBABF0600AB7C15 /* MTLEvent.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLEvent.hpp; sourceTree = "<group>"; };
+		4C1F066D2CBABF0600AB7C15 /* MTLFence.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFence.hpp; sourceTree = "<group>"; };
+		4C1F066E2CBABF0600AB7C15 /* MTLFunctionConstantValues.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFunctionConstantValues.hpp; sourceTree = "<group>"; };
+		4C1F066F2CBABF0600AB7C15 /* MTLFunctionDescriptor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFunctionDescriptor.hpp; sourceTree = "<group>"; };
+		4C1F06702CBABF0600AB7C15 /* MTLFunctionHandle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFunctionHandle.hpp; sourceTree = "<group>"; };
+		4C1F06712CBABF0600AB7C15 /* MTLFunctionLog.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFunctionLog.hpp; sourceTree = "<group>"; };
+		4C1F06722CBABF0600AB7C15 /* MTLFunctionStitching.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLFunctionStitching.hpp; sourceTree = "<group>"; };
+		4C1F06732CBABF0600AB7C15 /* MTLHeaderBridge.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLHeaderBridge.hpp; sourceTree = "<group>"; };
+		4C1F06742CBABF0600AB7C15 /* MTLHeap.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLHeap.hpp; sourceTree = "<group>"; };
+		4C1F06752CBABF0600AB7C15 /* MTLIndirectCommandBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIndirectCommandBuffer.hpp; sourceTree = "<group>"; };
+		4C1F06762CBABF0600AB7C15 /* MTLIndirectCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIndirectCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06772CBABF0600AB7C15 /* MTLIntersectionFunctionTable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIntersectionFunctionTable.hpp; sourceTree = "<group>"; };
+		4C1F06782CBABF0600AB7C15 /* MTLIOCommandBuffer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIOCommandBuffer.hpp; sourceTree = "<group>"; };
+		4C1F06792CBABF0600AB7C15 /* MTLIOCommandQueue.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIOCommandQueue.hpp; sourceTree = "<group>"; };
+		4C1F067A2CBABF0600AB7C15 /* MTLIOCompressor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLIOCompressor.hpp; sourceTree = "<group>"; };
+		4C1F067B2CBABF0600AB7C15 /* MTLLibrary.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLLibrary.hpp; sourceTree = "<group>"; };
+		4C1F067C2CBABF0600AB7C15 /* MTLLinkedFunctions.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLLinkedFunctions.hpp; sourceTree = "<group>"; };
+		4C1F067D2CBABF0600AB7C15 /* MTLLogState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLLogState.hpp; sourceTree = "<group>"; };
+		4C1F067E2CBABF0600AB7C15 /* MTLParallelRenderCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLParallelRenderCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F067F2CBABF0600AB7C15 /* MTLPipeline.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLPipeline.hpp; sourceTree = "<group>"; };
+		4C1F06802CBABF0600AB7C15 /* MTLPixelFormat.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLPixelFormat.hpp; sourceTree = "<group>"; };
+		4C1F06812CBABF0600AB7C15 /* MTLPrivate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLPrivate.hpp; sourceTree = "<group>"; };
+		4C1F06822CBABF0600AB7C15 /* MTLRasterizationRate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLRasterizationRate.hpp; sourceTree = "<group>"; };
+		4C1F06832CBABF0600AB7C15 /* MTLRenderCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLRenderCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06842CBABF0600AB7C15 /* MTLRenderPass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLRenderPass.hpp; sourceTree = "<group>"; };
+		4C1F06852CBABF0600AB7C15 /* MTLRenderPipeline.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLRenderPipeline.hpp; sourceTree = "<group>"; };
+		4C1F06862CBABF0600AB7C15 /* MTLResidencySet.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLResidencySet.hpp; sourceTree = "<group>"; };
+		4C1F06872CBABF0600AB7C15 /* MTLResource.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLResource.hpp; sourceTree = "<group>"; };
+		4C1F06882CBABF0600AB7C15 /* MTLResourceStateCommandEncoder.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLResourceStateCommandEncoder.hpp; sourceTree = "<group>"; };
+		4C1F06892CBABF0600AB7C15 /* MTLResourceStatePass.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLResourceStatePass.hpp; sourceTree = "<group>"; };
+		4C1F068A2CBABF0600AB7C15 /* MTLSampler.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLSampler.hpp; sourceTree = "<group>"; };
+		4C1F068B2CBABF0600AB7C15 /* MTLStageInputOutputDescriptor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLStageInputOutputDescriptor.hpp; sourceTree = "<group>"; };
+		4C1F068C2CBABF0600AB7C15 /* MTLTexture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLTexture.hpp; sourceTree = "<group>"; };
+		4C1F068D2CBABF0600AB7C15 /* MTLTypes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLTypes.hpp; sourceTree = "<group>"; };
+		4C1F068E2CBABF0600AB7C15 /* MTLVersion.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLVersion.hpp; sourceTree = "<group>"; };
+		4C1F068F2CBABF0600AB7C15 /* MTLVertexDescriptor.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLVertexDescriptor.hpp; sourceTree = "<group>"; };
+		4C1F06902CBABF0600AB7C15 /* MTLVisibleFunctionTable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTLVisibleFunctionTable.hpp; sourceTree = "<group>"; };
+		4C1F069C2CBABF0600AB7C15 /* CADefines.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CADefines.hpp; sourceTree = "<group>"; };
+		4C1F069D2CBABF0600AB7C15 /* CAMetalDrawable.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CAMetalDrawable.hpp; sourceTree = "<group>"; };
+		4C1F069E2CBABF0600AB7C15 /* CAMetalLayer.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CAMetalLayer.hpp; sourceTree = "<group>"; };
+		4C1F069F2CBABF0600AB7C15 /* CAPrivate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CAPrivate.hpp; sourceTree = "<group>"; };
+		4C1F06A02CBABF0600AB7C15 /* QuartzCore.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = QuartzCore.hpp; sourceTree = "<group>"; };
+		4C1F06A22CBABF0600AB7C15 /* MakeSingleHeader.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = MakeSingleHeader.py; sourceTree = "<group>"; };
+		4C1F06A42CBABF0600AB7C15 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		4C1F06A52CBABF0600AB7C15 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4C1F06A82CBABF4E00AB7C15 /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
+		4C7B0A9D2CBD663500856A9A /* AppKit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AppKit.hpp; sourceTree = "<group>"; };
+		4C7B0A9E2CBD663500856A9A /* AppKitPrivate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = AppKitPrivate.hpp; sourceTree = "<group>"; };
+		4C7B0A9F2CBD663500856A9A /* NSApplication.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSApplication.hpp; sourceTree = "<group>"; };
+		4C7B0AA02CBD663500856A9A /* NSMenu.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSMenu.hpp; sourceTree = "<group>"; };
+		4C7B0AA12CBD663500856A9A /* NSMenuItem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSMenuItem.hpp; sourceTree = "<group>"; };
+		4C7B0AA22CBD663500856A9A /* NSRunningApplication.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSRunningApplication.hpp; sourceTree = "<group>"; };
+		4C7B0AA32CBD663500856A9A /* NSView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSView.hpp; sourceTree = "<group>"; };
+		4C7B0AA42CBD663500856A9A /* NSWindow.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = NSWindow.hpp; sourceTree = "<group>"; };
+		4C7B0AA62CBD663500856A9A /* MetalKit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MetalKit.hpp; sourceTree = "<group>"; };
+		4C7B0AA72CBD663500856A9A /* MetalKitPrivate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MetalKitPrivate.hpp; sourceTree = "<group>"; };
+		4C7B0AA82CBD663500856A9A /* MTKView.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MTKView.hpp; sourceTree = "<group>"; };
+		4CA8C28A2CBAB95D005C46BA /* Metal Renderer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Metal Renderer"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		4CA8C28C2CBAB95D005C46BA /* Metal Renderer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Metal Renderer";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4CA8C2872CBAB95D005C46BA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C1F062F2CBABB5500AB7C15 /* Metal.framework in Frameworks */,
+				4C1F06A72CBABF4500AB7C15 /* AppKit.framework in Frameworks */,
+				4C1F06A92CBABF4E00AB7C15 /* MetalKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C1F06292CBABB4000AB7C15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F06A82CBABF4E00AB7C15 /* MetalKit.framework */,
+				4C1F06302CBABC6C00AB7C15 /* AppKit.framework */,
+				4C1F062E2CBABB5500AB7C15 /* Metal.framework */,
+				4C1F062C2CBABB4B00AB7C15 /* QuartzCore.framework */,
+				4C1F062A2CBABB4100AB7C15 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C1F06522CBABF0600AB7C15 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F063B2CBABF0600AB7C15 /* Foundation.hpp */,
+				4C1F063C2CBABF0600AB7C15 /* NSArray.hpp */,
+				4C1F063D2CBABF0600AB7C15 /* NSAutoreleasePool.hpp */,
+				4C1F063E2CBABF0600AB7C15 /* NSBundle.hpp */,
+				4C1F063F2CBABF0600AB7C15 /* NSData.hpp */,
+				4C1F06402CBABF0600AB7C15 /* NSDate.hpp */,
+				4C1F06412CBABF0600AB7C15 /* NSDefines.hpp */,
+				4C1F06422CBABF0600AB7C15 /* NSDictionary.hpp */,
+				4C1F06432CBABF0600AB7C15 /* NSEnumerator.hpp */,
+				4C1F06442CBABF0600AB7C15 /* NSError.hpp */,
+				4C1F06452CBABF0600AB7C15 /* NSLock.hpp */,
+				4C1F06462CBABF0600AB7C15 /* NSNotification.hpp */,
+				4C1F06472CBABF0600AB7C15 /* NSNumber.hpp */,
+				4C1F06482CBABF0600AB7C15 /* NSObjCRuntime.hpp */,
+				4C1F06492CBABF0600AB7C15 /* NSObject.hpp */,
+				4C1F064A2CBABF0600AB7C15 /* NSPrivate.hpp */,
+				4C1F064B2CBABF0600AB7C15 /* NSProcessInfo.hpp */,
+				4C1F064C2CBABF0600AB7C15 /* NSRange.hpp */,
+				4C1F064D2CBABF0600AB7C15 /* NSSet.hpp */,
+				4C1F064E2CBABF0600AB7C15 /* NSSharedPtr.hpp */,
+				4C1F064F2CBABF0600AB7C15 /* NSString.hpp */,
+				4C1F06502CBABF0600AB7C15 /* NSTypes.hpp */,
+				4C1F06512CBABF0600AB7C15 /* NSURL.hpp */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		4C1F06912CBABF0600AB7C15 /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F06532CBABF0600AB7C15 /* Metal.hpp */,
+				4C1F06542CBABF0600AB7C15 /* MTLAccelerationStructure.hpp */,
+				4C1F06552CBABF0600AB7C15 /* MTLAccelerationStructureCommandEncoder.hpp */,
+				4C1F06562CBABF0600AB7C15 /* MTLAccelerationStructureTypes.hpp */,
+				4C1F06572CBABF0600AB7C15 /* MTLAllocation.hpp */,
+				4C1F06582CBABF0600AB7C15 /* MTLArgument.hpp */,
+				4C1F06592CBABF0600AB7C15 /* MTLArgumentEncoder.hpp */,
+				4C1F065A2CBABF0600AB7C15 /* MTLBinaryArchive.hpp */,
+				4C1F065B2CBABF0600AB7C15 /* MTLBlitCommandEncoder.hpp */,
+				4C1F065C2CBABF0600AB7C15 /* MTLBlitPass.hpp */,
+				4C1F065D2CBABF0600AB7C15 /* MTLBuffer.hpp */,
+				4C1F065E2CBABF0600AB7C15 /* MTLCaptureManager.hpp */,
+				4C1F065F2CBABF0600AB7C15 /* MTLCaptureScope.hpp */,
+				4C1F06602CBABF0600AB7C15 /* MTLCommandBuffer.hpp */,
+				4C1F06612CBABF0600AB7C15 /* MTLCommandEncoder.hpp */,
+				4C1F06622CBABF0600AB7C15 /* MTLCommandQueue.hpp */,
+				4C1F06632CBABF0600AB7C15 /* MTLComputeCommandEncoder.hpp */,
+				4C1F06642CBABF0600AB7C15 /* MTLComputePass.hpp */,
+				4C1F06652CBABF0600AB7C15 /* MTLComputePipeline.hpp */,
+				4C1F06662CBABF0600AB7C15 /* MTLCounters.hpp */,
+				4C1F06672CBABF0600AB7C15 /* MTLDefines.hpp */,
+				4C1F06682CBABF0600AB7C15 /* MTLDepthStencil.hpp */,
+				4C1F06692CBABF0600AB7C15 /* MTLDevice.hpp */,
+				4C1F066A2CBABF0600AB7C15 /* MTLDrawable.hpp */,
+				4C1F066B2CBABF0600AB7C15 /* MTLDynamicLibrary.hpp */,
+				4C1F066C2CBABF0600AB7C15 /* MTLEvent.hpp */,
+				4C1F066D2CBABF0600AB7C15 /* MTLFence.hpp */,
+				4C1F066E2CBABF0600AB7C15 /* MTLFunctionConstantValues.hpp */,
+				4C1F066F2CBABF0600AB7C15 /* MTLFunctionDescriptor.hpp */,
+				4C1F06702CBABF0600AB7C15 /* MTLFunctionHandle.hpp */,
+				4C1F06712CBABF0600AB7C15 /* MTLFunctionLog.hpp */,
+				4C1F06722CBABF0600AB7C15 /* MTLFunctionStitching.hpp */,
+				4C1F06732CBABF0600AB7C15 /* MTLHeaderBridge.hpp */,
+				4C1F06742CBABF0600AB7C15 /* MTLHeap.hpp */,
+				4C1F06752CBABF0600AB7C15 /* MTLIndirectCommandBuffer.hpp */,
+				4C1F06762CBABF0600AB7C15 /* MTLIndirectCommandEncoder.hpp */,
+				4C1F06772CBABF0600AB7C15 /* MTLIntersectionFunctionTable.hpp */,
+				4C1F06782CBABF0600AB7C15 /* MTLIOCommandBuffer.hpp */,
+				4C1F06792CBABF0600AB7C15 /* MTLIOCommandQueue.hpp */,
+				4C1F067A2CBABF0600AB7C15 /* MTLIOCompressor.hpp */,
+				4C1F067B2CBABF0600AB7C15 /* MTLLibrary.hpp */,
+				4C1F067C2CBABF0600AB7C15 /* MTLLinkedFunctions.hpp */,
+				4C1F067D2CBABF0600AB7C15 /* MTLLogState.hpp */,
+				4C1F067E2CBABF0600AB7C15 /* MTLParallelRenderCommandEncoder.hpp */,
+				4C1F067F2CBABF0600AB7C15 /* MTLPipeline.hpp */,
+				4C1F06802CBABF0600AB7C15 /* MTLPixelFormat.hpp */,
+				4C1F06812CBABF0600AB7C15 /* MTLPrivate.hpp */,
+				4C1F06822CBABF0600AB7C15 /* MTLRasterizationRate.hpp */,
+				4C1F06832CBABF0600AB7C15 /* MTLRenderCommandEncoder.hpp */,
+				4C1F06842CBABF0600AB7C15 /* MTLRenderPass.hpp */,
+				4C1F06852CBABF0600AB7C15 /* MTLRenderPipeline.hpp */,
+				4C1F06862CBABF0600AB7C15 /* MTLResidencySet.hpp */,
+				4C1F06872CBABF0600AB7C15 /* MTLResource.hpp */,
+				4C1F06882CBABF0600AB7C15 /* MTLResourceStateCommandEncoder.hpp */,
+				4C1F06892CBABF0600AB7C15 /* MTLResourceStatePass.hpp */,
+				4C1F068A2CBABF0600AB7C15 /* MTLSampler.hpp */,
+				4C1F068B2CBABF0600AB7C15 /* MTLStageInputOutputDescriptor.hpp */,
+				4C1F068C2CBABF0600AB7C15 /* MTLTexture.hpp */,
+				4C1F068D2CBABF0600AB7C15 /* MTLTypes.hpp */,
+				4C1F068E2CBABF0600AB7C15 /* MTLVersion.hpp */,
+				4C1F068F2CBABF0600AB7C15 /* MTLVertexDescriptor.hpp */,
+				4C1F06902CBABF0600AB7C15 /* MTLVisibleFunctionTable.hpp */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		4C1F06A12CBABF0600AB7C15 /* QuartzCore */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F069C2CBABF0600AB7C15 /* CADefines.hpp */,
+				4C1F069D2CBABF0600AB7C15 /* CAMetalDrawable.hpp */,
+				4C1F069E2CBABF0600AB7C15 /* CAMetalLayer.hpp */,
+				4C1F069F2CBABF0600AB7C15 /* CAPrivate.hpp */,
+				4C1F06A02CBABF0600AB7C15 /* QuartzCore.hpp */,
+			);
+			path = QuartzCore;
+			sourceTree = "<group>";
+		};
+		4C1F06A32CBABF0600AB7C15 /* SingleHeader */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F06A22CBABF0600AB7C15 /* MakeSingleHeader.py */,
+			);
+			path = SingleHeader;
+			sourceTree = "<group>";
+		};
+		4C1F06A62CBABF0600AB7C15 /* metal-cpp */ = {
+			isa = PBXGroup;
+			children = (
+				4C1F06522CBABF0600AB7C15 /* Foundation */,
+				4C1F06912CBABF0600AB7C15 /* Metal */,
+				4C1F06A12CBABF0600AB7C15 /* QuartzCore */,
+				4C1F06A32CBABF0600AB7C15 /* SingleHeader */,
+				4C1F06A42CBABF0600AB7C15 /* LICENSE.txt */,
+				4C1F06A52CBABF0600AB7C15 /* README.md */,
+			);
+			path = "metal-cpp";
+			sourceTree = "<group>";
+		};
+		4C7B0AA52CBD663500856A9A /* AppKit */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B0A9D2CBD663500856A9A /* AppKit.hpp */,
+				4C7B0A9E2CBD663500856A9A /* AppKitPrivate.hpp */,
+				4C7B0A9F2CBD663500856A9A /* NSApplication.hpp */,
+				4C7B0AA02CBD663500856A9A /* NSMenu.hpp */,
+				4C7B0AA12CBD663500856A9A /* NSMenuItem.hpp */,
+				4C7B0AA22CBD663500856A9A /* NSRunningApplication.hpp */,
+				4C7B0AA32CBD663500856A9A /* NSView.hpp */,
+				4C7B0AA42CBD663500856A9A /* NSWindow.hpp */,
+			);
+			path = AppKit;
+			sourceTree = "<group>";
+		};
+		4C7B0AA92CBD663500856A9A /* MetalKit */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B0AA62CBD663500856A9A /* MetalKit.hpp */,
+				4C7B0AA72CBD663500856A9A /* MetalKitPrivate.hpp */,
+				4C7B0AA82CBD663500856A9A /* MTKView.hpp */,
+			);
+			path = MetalKit;
+			sourceTree = "<group>";
+		};
+		4C7B0AAA2CBD663500856A9A /* metal-cpp-extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4C7B0AA52CBD663500856A9A /* AppKit */,
+				4C7B0AA92CBD663500856A9A /* MetalKit */,
+			);
+			path = "metal-cpp-extensions";
+			sourceTree = "<group>";
+		};
+		4CA8C2812CBAB95D005C46BA = {
+			isa = PBXGroup;
+			children = (
+				4CA8C28C2CBAB95D005C46BA /* Metal Renderer */,
+				4C1F06A62CBABF0600AB7C15 /* metal-cpp */,
+				4C7B0AAA2CBD663500856A9A /* metal-cpp-extensions */,
+				4CA8C28B2CBAB95D005C46BA /* Products */,
+				4C1F06292CBABB4000AB7C15 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4CA8C28B2CBAB95D005C46BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4CA8C28A2CBAB95D005C46BA /* Metal Renderer */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4CA8C2892CBAB95D005C46BA /* Metal Renderer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4CA8C2912CBAB95D005C46BA /* Build configuration list for PBXNativeTarget "Metal Renderer" */;
+			buildPhases = (
+				4CA8C2862CBAB95D005C46BA /* Sources */,
+				4CA8C2872CBAB95D005C46BA /* Frameworks */,
+				4CA8C2882CBAB95D005C46BA /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4CA8C28C2CBAB95D005C46BA /* Metal Renderer */,
+			);
+			name = "Metal Renderer";
+			packageProductDependencies = (
+			);
+			productName = "Metal-Renderer";
+			productReference = 4CA8C28A2CBAB95D005C46BA /* Metal Renderer */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4CA8C2822CBAB95D005C46BA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4CA8C2892CBAB95D005C46BA = {
+						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
+					};
+				};
+			};
+			buildConfigurationList = 4CA8C2852CBAB95D005C46BA /* Build configuration list for PBXProject "Metal Renderer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4CA8C2812CBAB95D005C46BA;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4CA8C28B2CBAB95D005C46BA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4CA8C2892CBAB95D005C46BA /* Metal Renderer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4CA8C2862CBAB95D005C46BA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4CA8C28F2CBAB95D005C46BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4CA8C2902CBAB95D005C46BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4CA8C2922CBAB95D005C46BA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J288T95KZ2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_INPUT_FILETYPE = automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(PROJECT_DIR)/metal-cpp",
+					"$(PROJECT_DIR)/metal-cpp-extensions",
+					"$(PROJECT_DIR)/Metal-Renderer/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		4CA8C2932CBAB95D005C46BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = J288T95KZ2;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GCC_INPUT_FILETYPE = automatic;
+				"HEADER_SEARCH_PATHS[arch=*]" = (
+					"$(PROJECT_DIR)/metal-cpp",
+					"$(PROJECT_DIR)/metal-cpp-extensions",
+					"$(PROJECT_DIR)/Metal-Renderer/include",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4CA8C2852CBAB95D005C46BA /* Build configuration list for PBXProject "Metal Renderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CA8C28F2CBAB95D005C46BA /* Debug */,
+				4CA8C2902CBAB95D005C46BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4CA8C2912CBAB95D005C46BA /* Build configuration list for PBXNativeTarget "Metal Renderer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4CA8C2922CBAB95D005C46BA /* Debug */,
+				4CA8C2932CBAB95D005C46BA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4CA8C2822CBAB95D005C46BA /* Project object */;
+}
