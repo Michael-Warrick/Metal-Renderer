@@ -10,6 +10,8 @@
 #include <Metal/Metal.hpp>
 #include <MetalKit/MetalKit.hpp>
 
+#include <simd/simd.h>
+
 class Renderer
 {
 public:
@@ -19,6 +21,12 @@ public:
     void Draw(MTK::View *view);
 
 private:
+    void buildShaders();
+    void buildBuffers();
+    
     MTL::Device *m_Device;
     MTL::CommandQueue *m_CommandQueue;
+    MTL::RenderPipelineState *m_RenderPipelineState;
+    MTL::Buffer *m_VertexPositionsBuffer;
+    MTL::Buffer *m_VertexColorsBuffer;
 };
