@@ -6,6 +6,9 @@
 //
 
 #pragma once
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 #include <Metal/Metal.hpp>
 #include <MetalKit/MetalKit.hpp>
@@ -27,6 +30,8 @@ private:
     MTL::Device *m_Device;
     MTL::CommandQueue *m_CommandQueue;
     MTL::RenderPipelineState *m_RenderPipelineState;
+    MTL::Library *m_ShaderLibrary;
+    MTL::Buffer *m_ArgumentBuffer;
     MTL::Buffer *m_VertexPositionsBuffer;
     MTL::Buffer *m_VertexColorsBuffer;
 };

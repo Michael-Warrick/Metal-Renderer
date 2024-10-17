@@ -18,6 +18,8 @@ Renderer::Renderer(MTL::Device *device)
 
 Renderer::~Renderer()
 {
+    m_ShaderLibrary->release();
+    m_ArgumentBuffer->release();
     m_VertexPositionsBuffer->release();
     m_VertexColorsBuffer->release();
     
@@ -34,24 +36,27 @@ void Renderer::buildShaders()
     const char* shaderSourceCode = R"(
         #include <metal_stdlib>
         using namespace metal;
-
+    
         struct v2f
         {
             float4 position [[position]];
             half3 color;
         };
-
-        v2f vertex vertexMain( uint vertexId [[vertex_id]],
-                                device const float3* positions [[buffer(0)]],
-                                device const float3* colors [[buffer(1)]] )
+    
+        struct VertexData
+        {
+            device float3* positions [[id(0)]];
+            device float3* colors [[id(1)]];
+        };
+    
+        v2f vertex vertexMain( device const VertexData* vertexData [[buffer(0)]], uint vertexId [[vertex_id]] )
         {
             v2f o;
-            o.position = float4( positions[ vertexId ], 1.0 );
-            o.color = half3 ( colors[ vertexId ] );
-    
+            o.position = float4( vertexData->positions[ vertexId ], 1.0 );
+            o.color = half3(vertexData->colors[ vertexId ]);
             return o;
         }
-
+    
         half4 fragment fragmentMain( v2f in [[stage_in]] )
         {
             return half4( in.color, 1.0 );
@@ -80,11 +85,14 @@ void Renderer::buildShaders()
     vertexFunction->release();
     fragmentFunction->release();
     renderPipelineDescriptor->release();
-    library->release();
+    
+    m_ShaderLibrary = library;
 }
 
 void Renderer::buildBuffers()
 {
+    using NS::StringEncoding::UTF8StringEncoding;
+    
     const size_t numVertices = 3;
     
     simd::float3 positions[numVertices]
@@ -115,6 +123,26 @@ void Renderer::buildBuffers()
     
     m_VertexPositionsBuffer->didModifyRange(NS::Range::Make(0, m_VertexPositionsBuffer->length()));
     m_VertexColorsBuffer->didModifyRange(NS::Range::Make(0, m_VertexColorsBuffer->length()));
+    
+    if (!m_ShaderLibrary) {
+        throw std::runtime_error("Error: ShaderLibrary either incomplete or corrupted!");
+    }
+    
+    MTL::Function *vertexFunction = m_ShaderLibrary->newFunction(NS::String::string("vertexMain", UTF8StringEncoding));
+    MTL::ArgumentEncoder *argumentEncoder = vertexFunction->newArgumentEncoder(0);
+    
+    MTL::Buffer *argumentBuffer = m_Device->newBuffer(argumentEncoder->encodedLength(), MTL::ResourceStorageModeManaged);
+    m_ArgumentBuffer = argumentBuffer;
+    
+    argumentEncoder->setArgumentBuffer(m_ArgumentBuffer, 0);
+    
+    argumentEncoder->setBuffer(m_VertexPositionsBuffer, 0, 0);
+    argumentEncoder->setBuffer(m_VertexColorsBuffer, 0, 1);
+    
+    m_ArgumentBuffer->didModifyRange(NS::Range::Make(0, m_ArgumentBuffer->length()));
+    
+    vertexFunction->release();
+    argumentEncoder->release();
 }
 
 void Renderer::Draw(MTK::View *view)
@@ -126,8 +154,9 @@ void Renderer::Draw(MTK::View *view)
     MTL::RenderCommandEncoder *renderCommandEncoder = commandBuffer->renderCommandEncoder(renderPassDescriptor);
     
     renderCommandEncoder->setRenderPipelineState(m_RenderPipelineState);
-    renderCommandEncoder->setVertexBuffer(m_VertexPositionsBuffer, 0, 0);
-    renderCommandEncoder->setVertexBuffer(m_VertexColorsBuffer, 0, 1);
+    renderCommandEncoder->setVertexBuffer(m_ArgumentBuffer, 0, 0);
+    renderCommandEncoder->useResource(m_VertexPositionsBuffer, MTL::ResourceUsageRead);
+    renderCommandEncoder->useResource(m_VertexColorsBuffer, MTL::ResourceUsageRead);
     
     renderCommandEncoder->drawPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, NS::UInteger(0), NS::UInteger(3));
     

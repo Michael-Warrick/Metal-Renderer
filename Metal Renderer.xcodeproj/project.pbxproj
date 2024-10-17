@@ -15,8 +15,8 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		4CA8C2882CBAB95D005C46BA /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
