@@ -18,14 +18,20 @@
 class Renderer
 {
 public:
+    struct FrameData {
+        float angle;
+    };
+    
     Renderer(MTL::Device *device);
     ~Renderer();
     
     void Draw(MTK::View *view);
 
 private:
+    std::string loadShaderFile(const std::string& filePath);
     void buildShaders();
     void buildBuffers();
+    void buildFrameData();
     
     MTL::Device *m_Device;
     MTL::CommandQueue *m_CommandQueue;
@@ -34,4 +40,10 @@ private:
     MTL::Buffer *m_ArgumentBuffer;
     MTL::Buffer *m_VertexPositionsBuffer;
     MTL::Buffer *m_VertexColorsBuffer;
+    MTL::Buffer *m_FrameData[3];
+    
+    float m_Angle;
+    int m_Frame;
+    dispatch_semaphore_t m_Semaphore;
+    static const int MAX_FRAMES_IN_FLIGHT = 3;
 };

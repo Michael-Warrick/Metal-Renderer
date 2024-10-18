@@ -12,8 +12,14 @@ Renderer::Renderer(MTL::Device *device)
     m_Device = device->retain();
     m_CommandQueue = device->newCommandQueue();
     
+    m_Angle = 0.0f;
+    m_Frame = 0;
+    
     buildShaders();
     buildBuffers();
+    buildFrameData();
+    
+    m_Semaphore = dispatch_semaphore_create(MAX_FRAMES_IN_FLIGHT);
 }
 
 Renderer::~Renderer()
@@ -23,48 +29,40 @@ Renderer::~Renderer()
     m_VertexPositionsBuffer->release();
     m_VertexColorsBuffer->release();
     
+    for (int i = 0; i < MAX_FRAMES_IN_FLIGHT; ++i) {
+        m_FrameData[i]->release();
+    }
+    
     m_RenderPipelineState->release();
     
     m_CommandQueue->release();
     m_Device->release();
 }
 
+std::string Renderer::loadShaderFile(const std::string& filePath)
+{
+    std::ifstream shaderFile;
+    shaderFile.open(filePath);
+    
+    if (!shaderFile) {
+        throw std::runtime_error("Error: Couldn't open shader file (" + filePath + ")!");
+        return "";
+    }
+    
+    std::stringstream fileReader;
+    fileReader << shaderFile.rdbuf();
+    
+    return fileReader.str();
+}
+
 void Renderer::buildShaders()
 {
     using NS::StringEncoding::UTF8StringEncoding;
     
-    const char* shaderSourceCode = R"(
-        #include <metal_stdlib>
-        using namespace metal;
-    
-        struct v2f
-        {
-            float4 position [[position]];
-            half3 color;
-        };
-    
-        struct VertexData
-        {
-            device float3* positions [[id(0)]];
-            device float3* colors [[id(1)]];
-        };
-    
-        v2f vertex vertexMain( device const VertexData* vertexData [[buffer(0)]], uint vertexId [[vertex_id]] )
-        {
-            v2f o;
-            o.position = float4( vertexData->positions[ vertexId ], 1.0 );
-            o.color = half3(vertexData->colors[ vertexId ]);
-            return o;
-        }
-    
-        half4 fragment fragmentMain( v2f in [[stage_in]] )
-        {
-            return half4( in.color, 1.0 );
-        }
-    )";
+    const std::string& shaderSourceCode = loadShaderFile("resources/shaders/triangle.metal");
     
     NS::Error *error = nullptr;
-    MTL::Library *library = m_Device->newLibrary(NS::String::string(shaderSourceCode, UTF8StringEncoding), nullptr, &error);
+    MTL::Library *library = m_Device->newLibrary(NS::String::string(shaderSourceCode.c_str(), UTF8StringEncoding), nullptr, &error);
     if (!library) {
         throw std::runtime_error(error->localizedDescription()->utf8String());
     }
@@ -97,16 +95,16 @@ void Renderer::buildBuffers()
     
     simd::float3 positions[numVertices]
     {
-        {-0.8f, -0.8f, 0.0f},
-        {0.8f, -0.8f, 0.0f},
-        {0.0f, 0.8f, 0.0f}
+        {-0.5f, -0.5f, 0.0f},
+        {0.5f, -0.5f, 0.0f},
+        {0.0f, 0.5f, 0.0f}
     };
     
     simd::float3 colors[numVertices] =
     {
-        {1.0f, 0.3f, 0.2f},
-        {0.8f, 1.0, 0.0f},
-        {0.8f, 0.0f, 1.0f}
+        {1.0f, 0.0f, 0.0f},
+        {0.0f, 1.0, 0.0f},
+        {0.0f, 0.0f, 1.0f}
     };
     
     const size_t positionsDataSize = numVertices * sizeof(simd::float3);
@@ -145,11 +143,31 @@ void Renderer::buildBuffers()
     argumentEncoder->release();
 }
 
+void Renderer::buildFrameData()
+{
+    for (int i = 0; i < MAX_FRAMES_IN_FLIGHT; ++i) {
+        m_FrameData[i] = m_Device->newBuffer(sizeof(FrameData), MTL::ResourceStorageModeManaged);
+    }
+}
+
 void Renderer::Draw(MTK::View *view)
 {
     NS::AutoreleasePool *autoreleasePool = NS::AutoreleasePool::alloc()->init();
     
+    m_Frame = (m_Frame + 1) % MAX_FRAMES_IN_FLIGHT;
+    MTL::Buffer *frameDataBuffer = m_FrameData[m_Frame];
+    
     MTL::CommandBuffer *commandBuffer = m_CommandQueue->commandBuffer();
+    dispatch_semaphore_wait(m_Semaphore, DISPATCH_TIME_FOREVER);
+    
+    Renderer *renderer = this;
+    commandBuffer->addCompletedHandler(^void(MTL::CommandBuffer *commandBuffer){
+        dispatch_semaphore_signal(renderer->m_Semaphore);
+    });
+    
+    reinterpret_cast<FrameData *>(frameDataBuffer->contents())->angle = (m_Angle += 0.01f);
+    frameDataBuffer->didModifyRange(NS::Range::Make(0, sizeof(FrameData)));
+    
     MTL::RenderPassDescriptor *renderPassDescriptor = view->currentRenderPassDescriptor();
     MTL::RenderCommandEncoder *renderCommandEncoder = commandBuffer->renderCommandEncoder(renderPassDescriptor);
     
@@ -157,6 +175,8 @@ void Renderer::Draw(MTK::View *view)
     renderCommandEncoder->setVertexBuffer(m_ArgumentBuffer, 0, 0);
     renderCommandEncoder->useResource(m_VertexPositionsBuffer, MTL::ResourceUsageRead);
     renderCommandEncoder->useResource(m_VertexColorsBuffer, MTL::ResourceUsageRead);
+    
+    renderCommandEncoder->setVertexBuffer(frameDataBuffer, 0, 1);
     
     renderCommandEncoder->drawPrimitives(MTL::PrimitiveType::PrimitiveTypeTriangle, NS::UInteger(0), NS::UInteger(3));
     
